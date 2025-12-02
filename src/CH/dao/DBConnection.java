@@ -48,7 +48,7 @@ public class DBConnection {
             // 2. Tạo Database nếu chưa tồn tại
             String sqlCreateDB = "CREATE DATABASE IF NOT EXISTS " + DB_NAME;
             stmt.executeUpdate(sqlCreateDB);
-            System.out.println("Đã kiểm tra Database: " + DB_NAME);
+            System.out.println("Da Kiem Tra Database: " + DB_NAME);
             
             // Đóng kết nối server để chuyển sang kết nối DB
             stmt.close();
@@ -70,7 +70,7 @@ public class DBConnection {
                     + ") CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;";
             
             dbStmt.executeUpdate(sqlCreateTable);
-            System.out.println("Đã kiểm tra/tạo bảng NhanVien.");
+            System.out.println("Da Kiem tra/ Tao bang NhanVien.");
             
             // 4. Tạo bảng KhachHang nếu chưa tồn tại [MỚI THÊM]
             String sqlCreateKhachHang = "CREATE TABLE IF NOT EXISTS KhachHang ("
@@ -84,7 +84,7 @@ public class DBConnection {
                     + ") CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;";
             
             dbStmt.executeUpdate(sqlCreateKhachHang);
-            System.out.println("Đã kiểm tra/tạo bảng KhachHang.");
+            System.out.println("Da kiem tra/ Tao bang KhachHang.");
             
             // 6. Tạo bảng HoaDon [MỚI]
             String sqlCreateHoaDon = "CREATE TABLE IF NOT EXISTS HoaDon ("
@@ -95,7 +95,7 @@ public class DBConnection {
                     + "TongTien DOUBLE"
                     + ") CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;";
             dbStmt.executeUpdate(sqlCreateHoaDon);
-            System.out.println("Đã kiểm tra/tạo bảng HoaDon.");
+            System.out.println("Da Kiem tra/ Tao bang HoaDon.");
 
             // 7. Tạo bảng ChiTietHoaDon [MỚI]
             String sqlCreateChiTiet = "CREATE TABLE IF NOT EXISTS ChiTietHoaDon ("
@@ -107,7 +107,7 @@ public class DBConnection {
                     + "CONSTRAINT fk_hoadon FOREIGN KEY (MaHD) REFERENCES HoaDon(MaHD) ON DELETE CASCADE"
                     + ") CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;";
             dbStmt.executeUpdate(sqlCreateChiTiet);
-            System.out.println("Đã kiểm tra/Tạo bảng ChiTietHoaDon.");
+            System.out.println("Da Kiem tra/ Tao bang ChiTietHoaDon.");
 
             // (Optional) Tạo thêm các bảng khác ở đây nếu cần (Khách hàng, Hóa đơn...)
             
